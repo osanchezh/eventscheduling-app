@@ -2,13 +2,18 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.osanchezhuerta.eventscheduling</groupId>
-    <artifactId>eventscheduling-engine-soa</artifactId>
+    <artifactId>eventscheduling-manager</artifactId>
     <version>0.0.0.1</version>
   </parent>
-  <artifactId>eventscheduling-engine-soa-model</artifactId>
-  <name>eventscheduling-engine-soa-model</name>
-  <description>eventscheduling-engine-soa-model</description>
-  <packaging>jar</packaging>
+  <artifactId>eventscheduling-manager-soa</artifactId>
+  <packaging>pom</packaging>
+  <name>eventscheduling-manager-soa</name>
+  <description>eventscheduling-manager-soa</description>
+  <modules>
+  	<module>eventscheduling-manager-soa-commons</module>
+  	<module>eventscheduling-manager-soa-model</module>
+  	<module>eventscheduling-manager-soa-persistence</module>
+  </modules>
   <url>https://github.com/osanchezhuerta/eventscheduling-app</url>
   <organization>
     <name>osanchezhuerta</name>
