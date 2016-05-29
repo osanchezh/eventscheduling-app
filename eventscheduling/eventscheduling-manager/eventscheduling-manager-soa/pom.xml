@@ -13,6 +13,8 @@
   	<module>eventscheduling-manager-soa-commons</module>
   	<module>eventscheduling-manager-soa-model</module>
   	<module>eventscheduling-manager-soa-persistence</module>
+  	<module>eventscheduling-manager-soa-app</module>
+  	<module>eventscheduling-manager-soa-services</module>
   </modules>
   <url>https://github.com/osanchezhuerta/eventscheduling-app</url>
   <organization>

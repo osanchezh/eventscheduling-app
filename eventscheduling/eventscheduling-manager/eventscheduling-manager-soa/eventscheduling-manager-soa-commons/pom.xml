@@ -8,7 +8,6 @@
   <artifactId>eventscheduling-manager-soa-commons</artifactId>
   <name>eventscheduling-manager-soa-commons</name>
   <description>eventscheduling-manager-soa-commons</description>
-  <version>${eventscheduling-motor-soa.version}</version>
   <packaging>jar</packaging>
   <url>https://github.com/osanchezhuerta/eventscheduling-app</url>
   <organization>
