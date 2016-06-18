@@ -42,4 +42,7 @@
     <developerConnection>scm:git:git://github.com/osanchezhuerta/eventscheduling-app</developerConnection>
     <url>https://github.com/osanchezhuerta/eventscheduling-app</url>
   </scm>
+  <properties>
+    <eventscheduling.engine.soa.version>0.0.0.1</eventscheduling.engine.soa.version>
+  </properties>
 </project>
