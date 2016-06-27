@@ -14,16 +14,17 @@ import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 @EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class, JmsAutoConfiguration.class })
-@ImportResource("classpath:/DESA_init-bpm-lite-config.xml")
+@ImportResource("classpath:/spring/init-engine-soa-app-springctx.xml")
 public class EventSchedulingApplication {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(EventSchedulingApplication.class);
 
 	public static void main(String[] args) {
+		LOGGER.debug("init.EventSchedulingApplication");
 		ConfigurableApplicationContext configurableAppCtx= null;
 		SpringApplication springApp = new SpringApplication(EventSchedulingApplication.class);
 		springApp.setWebEnvironment(false);
-		ApplicationPidFileWriter appPidFileWriter = new ApplicationPidFileWriter("./d29BpmnLiteApplication.pid");
+		ApplicationPidFileWriter appPidFileWriter = new ApplicationPidFileWriter("./EventSchedulingApplication.pid");
 		springApp.addListeners(appPidFileWriter);
 		configurableAppCtx = springApp.run(args);
 		configurableAppCtx.registerShutdownHook();

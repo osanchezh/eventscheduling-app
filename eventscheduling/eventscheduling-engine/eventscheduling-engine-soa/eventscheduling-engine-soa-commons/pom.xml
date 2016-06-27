@@ -12,7 +12,7 @@
   <url>https://github.com/osanchezhuerta/eventscheduling-app</url>
   <organization>
     <name>osanchezhuerta</name>
-    <url>http://zeosaho.blogspot.mx/</url>
+    <url>http://codefixes.blogspot.mx/</url>
   </organization>
   <licenses>
     <license>
@@ -89,6 +89,11 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-oxm</artifactId>
+			<version>${spring.framework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jms</artifactId>
 			<version>${spring.framework.version}</version>
 		</dependency>
 		<dependency>
