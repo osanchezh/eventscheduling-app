@@ -9,5 +9,8 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
     http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
+	<import resource="classpath:/spring/init-engine-soa-persistence-springctx.xml" />
+	<import resource="classpath:/spring/init-engine-soa-services-springctx.xml" />
+	<import resource="classpath:/spring/init-engine-soa-integration-springctx.xml" />
 
 </beans>
