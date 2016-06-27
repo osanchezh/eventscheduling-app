@@ -6,7 +6,7 @@
     <version>0.0.0.1</version>
   </parent>
   <artifactId>eventscheduling-engine-soa-app</artifactId>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <name>eventscheduling-engine-soa-app</name>
   <description>eventscheduling-engine-soa-app</description>
   <url>https://github.com/osanchezhuerta/eventscheduling-app</url>
