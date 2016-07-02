@@ -41,5 +41,8 @@
     <spring-boot-version>1.3.5.RELEASE</spring-boot-version>
 	<spring.framework.version>4.2.6.RELEASE</spring.framework.version>
 	<spring.amqp.version>1.6.0.RELEASE</spring.amqp.version>
+	<spring-data-redis.version>1.7.2.RELEASE</spring-data-redis.version>
+	<org.slf4j.version>1.7.20</org.slf4j.version>
+	<ch.qos.logback.version>1.1.7</ch.qos.logback.version>
   </properties>
 </project>

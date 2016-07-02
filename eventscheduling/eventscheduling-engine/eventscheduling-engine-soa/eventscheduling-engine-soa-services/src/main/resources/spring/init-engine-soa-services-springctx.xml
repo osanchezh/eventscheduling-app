@@ -11,6 +11,7 @@
 
 	<util:properties id="event_amqp_config_prop" location="classpath:/config/event_amqp_config.properties" />
 	<context:property-placeholder properties-ref="event_amqp_config_prop" />
-	<import resource="classpath:/spring/services/engine-soa-config-jms-springctx.xml" />
+	
+	<import resource="classpath:/spring/services/jms/engine-config-jms-springctx.xml" />
 	
 </beans>
