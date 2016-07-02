@@ -1,6 +1,8 @@
 package org.osanchezhuerta.eventscheduling.engine.soa.app.main;
 
 
+import org.osanchezhuerta.eventscheduling.engine.soa.commons.constants.EventSchedulingConstants;
+import org.osanchezhuerta.eventscheduling.engine.soa.commons.util.EventSchedulingPidUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -18,13 +20,15 @@ import org.springframework.context.annotation.ImportResource;
 public class EventSchedulingApplication {
 	
 	private static final Logger LOGGER = LoggerFactory.getLogger(EventSchedulingApplication.class);
-
+    
 	public static void main(String[] args) {
 		LOGGER.debug("init.EventSchedulingApplication");
 		ConfigurableApplicationContext configurableAppCtx= null;
 		SpringApplication springApp = new SpringApplication(EventSchedulingApplication.class);
 		springApp.setWebEnvironment(false);
-		ApplicationPidFileWriter appPidFileWriter = new ApplicationPidFileWriter("./EventSchedulingApplication.pid");
+		String applicationName= EventSchedulingConstants.APPLICATION_NAME;
+		String pidFileName = EventSchedulingPidUtil.createPidName(applicationName);
+		ApplicationPidFileWriter appPidFileWriter = new ApplicationPidFileWriter(pidFileName);
 		springApp.addListeners(appPidFileWriter);
 		configurableAppCtx = springApp.run(args);
 		configurableAppCtx.registerShutdownHook();
