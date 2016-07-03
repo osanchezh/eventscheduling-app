@@ -9,6 +9,14 @@
        http://www.springframework.org/schema/context            http://www.springframework.org/schema/context/spring-context.xsd 
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 	
-	<import resource="classpath:/spring/services/jms/container/engine-connection-springctx.xml" />
+	<import resource="classpath:/spring/services/jms/container/engine-connection-jms-springctx.xml" />
+	<import resource="classpath:/spring/services/jms/container/engine-queue-jms-springctx.xml" />
+	<import resource="classpath:/spring/services/jms/container/engine-exchange-jms-springctx.xml" />
+
+<bean class="org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer">
+    <constructor-arg ref="connectionFactory" />
+    <property name="queues" ref="replyQ" />
+    <property name="messageListener" ref="amqpTemplate" />
+</bean>
 
 </beans>

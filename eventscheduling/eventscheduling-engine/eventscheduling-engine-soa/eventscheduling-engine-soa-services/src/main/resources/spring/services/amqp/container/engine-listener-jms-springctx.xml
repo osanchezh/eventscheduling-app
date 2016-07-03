@@ -11,17 +11,8 @@
          http://www.springframework.org/schema/tx 
          http://www.springframework.org/schema/tx/spring-tx.xsd
          http://www.springframework.org/schema/rabbit 
-         http://www.springframework.org/schema/rabbit/spring-rabbit-1.3.xsd">
+         http://www.springframework.org/schema/rabbit/spring-rabbit-1.6.xsd">
 
 
-    <rabbit:queue id="Request" durable="true" auto-delete="false"  
-        name="queue_one">  
-         <rabbit:queue-arguments>  
-            <entry key="x-message-ttl">  
-                <value type="java.lang.Long">100</value>  
-            </entry>  
-            <entry key="x-ha-policy" value="all" />  
-        </rabbit:queue-arguments> 
-    </rabbit:queue>
-    
+
 </beans>
