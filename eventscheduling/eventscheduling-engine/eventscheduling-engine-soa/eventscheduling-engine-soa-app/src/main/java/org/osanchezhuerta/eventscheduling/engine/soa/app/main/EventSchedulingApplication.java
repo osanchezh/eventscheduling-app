@@ -1,7 +1,7 @@
 package org.osanchezhuerta.eventscheduling.engine.soa.app.main;
 
 
-import org.osanchezhuerta.eventscheduling.engine.soa.commons.constant.EventSchedulingConstants;
+import org.osanchezhuerta.eventscheduling.engine.soa.commons.constant.EventSchedulingConstant;
 import org.osanchezhuerta.eventscheduling.engine.soa.commons.util.EngineSchedulingPidUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +26,7 @@ public class EventSchedulingApplication {
 		ConfigurableApplicationContext configurableAppCtx= null;
 		SpringApplication springApp = new SpringApplication(EventSchedulingApplication.class);
 		springApp.setWebEnvironment(false);
-		String applicationName= EventSchedulingConstants.APPLICATION_NAME;
+		String applicationName= EventSchedulingConstant.APPLICATION_NAME;
 		String pidFileName = EngineSchedulingPidUtil.createPidName(applicationName);
 		ApplicationPidFileWriter appPidFileWriter = new ApplicationPidFileWriter(pidFileName);
 		springApp.addListeners(appPidFileWriter);

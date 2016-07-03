@@ -1,6 +1,6 @@
 package org.osanchezhuerta.eventscheduling.engine.soa.commons.util;
 
-import org.osanchezhuerta.eventscheduling.engine.soa.commons.constant.EventSchedulingConstants;
+import org.osanchezhuerta.eventscheduling.engine.soa.commons.constant.EventSchedulingConstant;
 
 public final class EngineSchedulingPidUtil {
   public static String createPidName(String applicationName){
@@ -8,7 +8,7 @@ public final class EngineSchedulingPidUtil {
 	  sbApplicationName.append("./");
 	  sbApplicationName.append(applicationName);
 	  sbApplicationName.append(".");
-	  sbApplicationName.append(EventSchedulingConstants.PID_EXTENSION);
+	  sbApplicationName.append(EventSchedulingConstant.PID_EXTENSION);
 	  return sbApplicationName.toString();
   }
 }

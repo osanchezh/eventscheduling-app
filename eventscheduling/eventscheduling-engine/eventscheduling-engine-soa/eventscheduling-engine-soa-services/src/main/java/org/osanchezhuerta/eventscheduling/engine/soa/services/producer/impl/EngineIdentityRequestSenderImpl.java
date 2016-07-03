@@ -1,7 +1,7 @@
 package org.osanchezhuerta.eventscheduling.engine.soa.services.producer.impl;
 
 
-import org.osanchezhuerta.eventscheduling.engine.soa.commons.constant.EventSchedulingConstants;
+import org.osanchezhuerta.eventscheduling.engine.soa.commons.constant.EventSchedulingConstant;
 import org.osanchezhuerta.eventscheduling.engine.soa.commons.exception.EngineAmqpException;
 import org.osanchezhuerta.eventscheduling.engine.soa.commons.util.EngineDataUtil;
 import org.osanchezhuerta.eventscheduling.engine.soa.commons.vo.BusinessMessage;
@@ -31,7 +31,7 @@ public class EngineIdentityRequestSenderImpl implements BusinessMessageSender<St
 		properties.setMessageId(businessMessage.getMessageId());
 		properties.setPriority(businessMessage.getPriority());
 		
-		byte[] messageContent = businessMessage.getMessage().getBytes(EventSchedulingConstants.DEFAULT_CHARSET);
+		byte[] messageContent = businessMessage.getMessage().getBytes(EventSchedulingConstant.DEFAULT_CHARSET);
 		Message message = MessageBuilder
 				.withBody(messageContent)
 				.copyProperties(properties)

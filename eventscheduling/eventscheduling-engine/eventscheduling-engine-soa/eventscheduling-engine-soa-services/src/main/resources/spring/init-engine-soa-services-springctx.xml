@@ -13,5 +13,6 @@
 	<context:property-placeholder properties-ref="event_amqp_config_prop" />
 	
 	<import resource="classpath:/spring/services/amqp/engine-config-jms-springctx.xml" />
+	<import resource="classpath:/spring/services/mapper/engine-config-mapper-springctx.xml" />
 	
 </beans>

@@ -11,18 +11,15 @@
          http://www.springframework.org/schema/tx 
          http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
- <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+ <bean id="engineRedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
     <property name="host-name" value="localhost"/>
     <property name="port" value="6379"/>
     <property name="password" value=""/>
   </bean>
 
- <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+ <bean id="engineRedisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
   <property name="connection-factory-ref" ref="connectionFactory"/>
   </bean>
-   
- <bean id="userRepository" class="com.mycompany.redis.repository.UserRepository">
-  <property name="redisTemplate" ref="redisTemplate"/>
- </bean>
+
 
 </beans>
