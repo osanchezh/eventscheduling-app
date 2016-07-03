@@ -13,6 +13,19 @@
          http://www.springframework.org/schema/rabbit 
          http://www.springframework.org/schema/rabbit/spring-rabbit-1.6.xsd">
 
+<bean id="engineIdentityRequestListener"
+class="org.osanchezhuerta.eventscheduling.engine.soa.services.consumer.impl.EngineIdentityRequestListener">
+</bean>
 
+<bean id="engineIdentityReplyListener"
+class="org.osanchezhuerta.eventscheduling.engine.soa.services.consumer.impl.EngineIdentityReplyListener">
+</bean>
 
+<bean id="engineIdentityErrorListener"
+class="org.osanchezhuerta.eventscheduling.engine.soa.services.consumer.impl.EngineIdentityErrorListener">
+</bean>
+
+<bean id="engineIdentityDlqListener"
+class="org.osanchezhuerta.eventscheduling.engine.soa.services.consumer.impl.EngineIdentityDlqListener">
+</bean>
 </beans>

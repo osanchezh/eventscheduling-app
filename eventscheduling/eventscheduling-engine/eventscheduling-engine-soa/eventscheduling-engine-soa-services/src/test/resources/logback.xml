@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-	<property name="LOG_HOME" value="${loghome.app}" />
+	<property name="LOG_HOME" value="/home/osanchezhuerta/loghome/eventsheduling/" />
 	<property name="MODULE_NAME" value="eventscheduling-engine-soa-services" />
 	<property name="PACKAGE_NAME" value="org.osanchezhuerta" />
 

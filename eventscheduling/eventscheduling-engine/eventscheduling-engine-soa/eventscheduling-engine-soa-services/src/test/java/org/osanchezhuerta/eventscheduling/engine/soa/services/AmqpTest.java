@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class AmqpTest {
 	
 	private static final Logger LOGGER =  LoggerFactory.getLogger(AmqpTest.class);
-   
+    
 	@Test
 	public void testAmqpConfiguration(){
 		LOGGER.debug("TEST1");

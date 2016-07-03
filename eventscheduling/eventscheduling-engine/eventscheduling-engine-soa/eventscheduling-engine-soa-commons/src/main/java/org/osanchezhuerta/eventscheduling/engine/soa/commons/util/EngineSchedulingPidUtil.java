@@ -1,8 +1,8 @@
 package org.osanchezhuerta.eventscheduling.engine.soa.commons.util;
 
-import org.osanchezhuerta.eventscheduling.engine.soa.commons.constants.EventSchedulingConstants;
+import org.osanchezhuerta.eventscheduling.engine.soa.commons.constant.EventSchedulingConstants;
 
-public final class EventSchedulingPidUtil {
+public final class EngineSchedulingPidUtil {
   public static String createPidName(String applicationName){
 	  StringBuilder sbApplicationName = new StringBuilder();
 	  sbApplicationName.append("./");
