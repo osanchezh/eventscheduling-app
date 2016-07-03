@@ -6,6 +6,8 @@ import org.osanchezhuerta.eventscheduling.engine.soa.commons.exception.EngineAmq
 import org.osanchezhuerta.eventscheduling.engine.soa.commons.util.EngineDataUtil;
 import org.osanchezhuerta.eventscheduling.engine.soa.commons.vo.BusinessMessage;
 import org.osanchezhuerta.eventscheduling.engine.soa.services.producer.BusinessMessageSender;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
@@ -14,11 +16,17 @@ import org.springframework.amqp.core.MessageProperties;
 
 
 public class EngineIdentityRequestSenderImpl implements BusinessMessageSender<String> {
+	private static final Logger LOGGER =  LoggerFactory.getLogger(EngineIdentityRequestSenderImpl.class);
 
 
 	private AmqpTemplate amqpTemplate;
 	
     private String routingKey;
+    
+    private String exchange;
+
+
+
 
 	@Override
 	public void sendMessage(BusinessMessage<String> businessMessage) throws EngineAmqpException {
@@ -30,18 +38,24 @@ public class EngineIdentityRequestSenderImpl implements BusinessMessageSender<St
 		properties.setTimestamp(EngineDataUtil.currentDate());
 		properties.setMessageId(businessMessage.getMessageId());
 		properties.setPriority(businessMessage.getPriority());
-		
+		LOGGER.debug("businessMessage.getMessage()="+businessMessage.getMessage());
 		byte[] messageContent = businessMessage.getMessage().getBytes(EventSchedulingConstant.DEFAULT_CHARSET);
 		Message message = MessageBuilder
 				.withBody(messageContent)
 				.copyProperties(properties)
 				.copyHeaders(businessMessage.getHeaders()).build();
-		
-		amqpTemplate.send(message);
-		amqpTemplate.send(routingKey, message);
+		LOGGER.debug("routingKey="+routingKey);
+
+		amqpTemplate.send("engineIdentityRequestExchange", "engineIdentityRequestQueueKey", message);
 	}
 	
-
+	public String getExchange() {
+		return exchange;
+	}
+	public void setExchange(String exchange) {
+		this.exchange = exchange;
+	}
+	
 	public AmqpTemplate getAmqpTemplate() {
 		return amqpTemplate;
 	}

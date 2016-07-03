@@ -17,23 +17,29 @@
 		class="org.osanchezhuerta.eventscheduling.engine.soa.services.producer.impl.EngineIdentityRequestSenderImpl">
 		<property name="amqpTemplate" ref="engineAmqpTemplate" />
 		<property name="routingKey" value="engineIdentityRequestQueueKey" />
+		<property name="exchange" value="engineIdentityRequestExchange" />
 	</bean>
 
    <bean id="engineIdentityReplySender"
 		class="org.osanchezhuerta.eventscheduling.engine.soa.services.producer.impl.EngineIdentityRequestSenderImpl">
 		<property name="amqpTemplate" ref="engineAmqpTemplate" />
 		<property name="routingKey" value="engineIdentityReplyQueueKey" />
+		<property name="exchange" value="engineIdentityReplyExchange" />
 	</bean>
 	
    <bean id="engineIdentityErrorSender"
 		class="org.osanchezhuerta.eventscheduling.engine.soa.services.producer.impl.EngineIdentityRequestSenderImpl">
 		<property name="amqpTemplate" ref="engineAmqpTemplate" />
 		<property name="routingKey" value="engineIdentityErrorQueueKey" />
+		<property name="exchange" value="engineIdentityErrorExchange" />
+
 	</bean>
 	
    <bean id="engineIdentityDlqSender"
 		class="org.osanchezhuerta.eventscheduling.engine.soa.services.producer.impl.EngineIdentityRequestSenderImpl">
 		<property name="amqpTemplate" ref="engineAmqpTemplate" />
 		<property name="routingKey" value="engineIdentityDlqQueueKey" />
+		<property name="exchange" value="engineIdentityDlqExchange" />
+
 	</bean>
 </beans>

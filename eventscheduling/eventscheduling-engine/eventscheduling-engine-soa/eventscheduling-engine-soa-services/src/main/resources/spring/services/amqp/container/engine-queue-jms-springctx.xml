@@ -16,41 +16,58 @@
 
     <rabbit:queue id="engineIdentityRequestQueue" name="#{event_amqp_config_prop['engine.queuename.identity.request']}" 
          durable="true" auto-delete="false">  
+       
          <rabbit:queue-arguments>  
             <entry key="x-message-ttl">  
                 <value type="java.lang.Long">100</value>  
             </entry>  
             <entry key="x-ha-policy" value="all" />  
+            <entry key="x-dead-letter-exchange" value="engineIdentityDlqExchange" />  
+            <entry key="x-dead-letter-routing-key" value="engineIdentityDlqQueueKey" />  
+            
         </rabbit:queue-arguments> 
+        <!--    -->
     </rabbit:queue>
     
     <rabbit:queue id="engineIdentityReplyQueue" name="#{event_amqp_config_prop['engine.queuename.identity.reply']}" 
          durable="true" auto-delete="false">  
+         
          <rabbit:queue-arguments>  
             <entry key="x-message-ttl">  
                 <value type="java.lang.Long">100</value>  
             </entry>  
             <entry key="x-ha-policy" value="all" />  
+            <entry key="x-dead-letter-exchange" value="engineIdentityDlqExchange" />  
+            <entry key="x-dead-letter-routing-key" value="engineIdentityDlqQueueKey" /> 
         </rabbit:queue-arguments> 
+       
     </rabbit:queue>
     
     <rabbit:queue id="engineIdentityErrorQueue" name="#{event_amqp_config_prop['engine.queuename.identity.error']}" 
          durable="true" auto-delete="false">  
+         
          <rabbit:queue-arguments>  
             <entry key="x-message-ttl">  
                 <value type="java.lang.Long">100</value>  
             </entry>  
             <entry key="x-ha-policy" value="all" />  
+            <entry key="x-dead-letter-exchange" value="engineIdentityDlqExchange" />  
+            <entry key="x-dead-letter-routing-key" value="engineIdentityDlqQueueKey" /> 
         </rabbit:queue-arguments> 
+        
     </rabbit:queue>
     
     <rabbit:queue id="engineIdentityDlqQueue" name="#{event_amqp_config_prop['engine.queuename.identity.dlq']}" 
-         durable="true" auto-delete="false">  
+         durable="true" auto-delete="false"> 
+         
          <rabbit:queue-arguments>  
             <entry key="x-message-ttl">  
                 <value type="java.lang.Long">100</value>  
             </entry>  
             <entry key="x-ha-policy" value="all" />  
+            <entry key="x-dead-letter-exchange" value="engineIdentityDlqExchange" />  
+            <entry key="x-dead-letter-routing-key" value="engineIdentityDlqQueueKey" /> 
         </rabbit:queue-arguments> 
+         
     </rabbit:queue>
 </beans>

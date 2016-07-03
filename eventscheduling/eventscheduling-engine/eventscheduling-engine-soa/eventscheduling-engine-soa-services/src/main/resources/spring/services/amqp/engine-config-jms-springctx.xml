@@ -14,6 +14,8 @@
 	<import resource="classpath:/spring/services/amqp/container/engine-exchange-jms-springctx.xml" />
 	<import resource="classpath:/spring/services/amqp/container/engine-producer-jms-springctx.xml" />
 	<import resource="classpath:/spring/services/amqp/container/engine-listener-jms-springctx.xml" />
+	<import resource="classpath:/spring/services/amqp/container/engine-recoverer-jms-springctx.xml" />
+	<import resource="classpath:/spring/services/amqp/container/engine-consumer-jms-springctx.xml" />
 
 
 </beans>
