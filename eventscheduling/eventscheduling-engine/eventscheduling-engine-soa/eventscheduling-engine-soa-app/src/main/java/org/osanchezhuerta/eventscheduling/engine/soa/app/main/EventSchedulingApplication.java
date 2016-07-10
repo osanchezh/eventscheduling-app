@@ -25,7 +25,8 @@ public class EventSchedulingApplication {
 		LOGGER.debug("init.EventSchedulingApplication");
 		ConfigurableApplicationContext configurableAppCtx= null;
 		SpringApplication springApp = new SpringApplication(EventSchedulingApplication.class);
-		springApp.setWebEnvironment(false);
+		springApp.setWebEnvironment(true);
+
 		String applicationName= EventSchedulingConstant.APPLICATION_NAME;
 		String pidFileName = EngineSchedulingPidUtil.createPidName(applicationName);
 		ApplicationPidFileWriter appPidFileWriter = new ApplicationPidFileWriter(pidFileName);

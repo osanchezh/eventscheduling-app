@@ -45,7 +45,6 @@ public class AmqpTest {
 	@Test
 	public void testAmqpConfiguration(){
 		LOGGER.debug("TEST1");
-
 		IdentityRequest identityRequest = new IdentityRequest();
 		StringWriter sw = new StringWriter();
 		try {
